@@ -1,0 +1,7 @@
+/*
+    ...ommitted code...
+    *= require_self
+    *= require bootstrap-datepicker
+    *= require jquery-ui
+    *= require_tree .
+*/

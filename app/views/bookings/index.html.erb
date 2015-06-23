@@ -1,0 +1,105 @@
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            editable: false,
+            eventLimit: true, // allow "more" link when too many events            
+        });
+        $('#start').timepicker();
+        $('#end').timepicker();
+
+
+    });
+
+</script>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-xs-8">
+            <div id="calendar">
+
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Book Conference Room</h2>
+                </div>
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="room">Room :</label>
+                            <select id="room" onchange="fetchBookingsForRoom()">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking_Date">Date :</label>
+                            <input id="booking_Date" type="text" data-provide='datepicker'>
+                        </div>
+                        <div class="input-group">
+                            <%= text_field_tag :start, placeholder="FROM",class:"form-control validate[required]" %>
+                            <span class="input-group-addon">-</span>
+                            <%= text_field_tag :end, placeholder="TO", class:"form-control validate[required]"%>  
+                        </div>
+                        <br/>
+                        <div class="form-group">
+                            <a onclick="newBooking()"value="Book" name="Book" id="book_btn" class="btn btn-success sub_btn">Book Room</a>
+                        </div>
+                        <div class="form-group">
+                            <span id="message"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Add holiday</h2>
+                </div>
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="holiday_Date">Date :</label>
+                            <input id="holiday_Date" type="text" data-provide='datepicker'>
+                        </div>
+                        <br/>
+                        <div class="form-group">
+                            <a onclick="newHoliday()"value="Book" name="Book" id="book_btn" class="btn btn-success sub_btn">Add Holiday</a>
+                        </div>
+                        <div class="form-group">
+                            <span id="h_message"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Add room</h2>
+                </div>
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="room_name">Room Name :</label>
+                            <input id="room_name" type="text" >
+                        </div>
+                        <br/>
+                        <div class="form-group">
+                            <a onclick="newRoom()"value="Book" name="Book" id="book_btn" class="btn btn-success sub_btn">Add Holiday</a>
+                        </div>
+                        <div class="form-group">
+                            <span id="r_message"></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

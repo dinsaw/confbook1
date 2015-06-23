@@ -1,0 +1,10 @@
+<h1>Add new room	</h1>
+<%= form_for :room, url: rooms_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

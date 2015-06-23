@@ -1,0 +1,15 @@
+<%= form_for :user, url: users_path do |f| %>
+  <p>
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </p>
+ 
+  <p>
+    <%= f.label :password %><br><br>
+    <%= f.text_field :password %>
+  </p>
+ 
+  <p>
+    <%= f.submit class:'btn btn-success' %>
+  </p>
+<% end %>

@@ -1,0 +1,39 @@
+
+
+<div class="container">
+	<div class="row">
+
+		<div class="col-xs-8">
+			<div class="jumbotron">
+				<h1>Welcome to Conference Room Booking</h1>
+			</div>
+		</div>
+
+		<div class="col-xs-4">
+			<div class="login-panel panel panel-default">
+				<div class="panel-heading">
+					<h2 class="panel-title">Sign In</h2>
+				</div>
+				<div class="panel-body">
+					<%= form_tag sessions_path do %>
+					<fieldset>
+						<div class="form-group">
+							<%= text_field_tag :username, params[:username], placeholder:'Username', class:"form-control validate[required]", autofocus:'' , autocomplete:'off' %>  
+						</div>
+						<div class="form-group">
+							<%= password_field_tag :password,params[:password], class:"form-control validate[required]]", placeholder:'Password'%>
+						</div>
+
+						<%= submit_tag "Log in",  class:'btn btn-success' %>
+						<div class="fr_pass"><!--<a data-toggle="modal" data-target="#frg_pass">Forgot password?</a>--></div>
+
+
+					</fieldset>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
